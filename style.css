@@ -134,11 +134,6 @@ nav.theme-navigation ul li {
 	margin: 0;
 }
 
-.wp-theme-netscape main .wp-post-image {
-	float: left;
-	margin: 0 1em 1em 0;
-}
-
 .wp-theme-netscape .page main .wp-post-image,
 .wp-theme-netscape .single main .wp-post-image {
 	float: left;
