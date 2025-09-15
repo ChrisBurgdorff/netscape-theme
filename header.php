@@ -67,6 +67,7 @@
 			else :
 				?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a></p>
+				
 				<?php
 			endif;
 			$netscape_description = get_bloginfo( 'description', 'display' );
@@ -74,5 +75,24 @@
 				?>
 				<p class="marquee margin"><span class="inner-marquee"><?php echo $netscape_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></p>
 			<?php endif; ?>
+		<?php if (is_page()): ?>
+			<main id="primary" class="site-main">
+
+				<?php
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', 'page' );
+
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+				endwhile; // End of the loop.
+				?>
+
+			</main><!-- #main -->
+		<?php endif; ?>
 		</div><!-- .site-branding -->
 	</header><!-- #masthead -->
