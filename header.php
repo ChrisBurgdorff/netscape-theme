@@ -25,7 +25,7 @@
 <div class="wrapper">
 
     <div class="mobile-nav-open-button">
-        <span class="dashicons dashicons-menu" id="menu-toggle"></span>
+        <span class="dashicons dashicons-menu" id="menu-toggle">MENU</span>
         <!--<strong>Toggle Menu</strong>-->
 				<div class="mobile-nav">
 					<?php

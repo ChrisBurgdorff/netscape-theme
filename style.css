@@ -124,7 +124,7 @@ nav.theme-navigation ul li {
 }
 
 .wp-theme-netscape header img {
-	
+	max-width: 99%;
 	border-radius: 4px;
 	box-shadow: none !important;
 }
@@ -504,6 +504,16 @@ pre.code {
   content: "";
 }
 
+/* Default: hidden on mobile */
+.mobile-nav {
+  display: none;
+}
+
+/* When toggled open */
+.mobile-nav.is-open {
+  display: block;
+}
+
 /**
  * Mobile
  */
@@ -511,6 +521,12 @@ pre.code {
 	#page {
 		display: block;
 	}
+
+	.wrapper {
+    height: auto;       /* let content decide height */
+    overflow: auto;  /* don’t clip */
+    display: block;     /* you already had this */
+  }
 
 	.wp-theme-netscape .wrapper {
 		display: block;
@@ -683,8 +699,7 @@ img {
 
 .wrapper {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+
 }
 
 .wrapper nav,
@@ -726,20 +741,5 @@ img {
 	margin-left: 1rem;
 }
 
-/* Default: hidden on mobile */
-.mobile-nav {
-  display: none;
-}
 
-/* When toggled open */
-.mobile-nav.is-open {
-  display: block;
-}
 
-/* Desktop breakpoint: always visible */
-@media screen and (min-width: 768px) {
-  
-  .mobile-nav-open-button {
-    display: none; /* hide the toggle button on desktop */
-  }
-}
