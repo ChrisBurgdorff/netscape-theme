@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer">
 		<?php 
 			$raw = do_shortcode('[Get_Counter_Hits]');
-    	$num = intval($raw); // make sure it's just a number
+    	$num = intval(strip_tags($raw)); // make sure it's just a number
 
     	// now wrap it
     	echo do_shortcode('[geo_counter number="' . $num . '" digits="6"]');
