@@ -159,6 +159,24 @@ function netscape_scripts() {
 add_action( 'wp_enqueue_scripts', 'netscape_scripts' );
 
 /**
+ * Implement custom hit counter
+ */
+function geo_counter_display( $atts ) {
+	$atts = shortcode_atts( array(
+			'number' => 0,
+			'digits' => 6,
+	), $atts, 'geo_counter' );
+
+	$num = str_pad( intval( $atts['number'] ), intval( $atts['digits'] ), '0', STR_PAD_LEFT );
+
+	return '<div class="geo-counter">
+						<span class="geo-label">You are Visitor Number: </span>
+						<span class="geo-digits">' . esc_html( $num ) . '</span>
+					</div>';
+}
+add_shortcode( 'geo_counter', 'geo_counter_display' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

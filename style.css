@@ -509,6 +509,78 @@ pre.code {
   display: block;
 }
 
+/* Hit Counter */
+/* Geocities retro hit counter */
+.geo-counter{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: linear-gradient(#f2e9c9, #d9c69a);
+  border: 3px ridge #7a4b00;
+  box-shadow: 0 4px 0 #6a3f00, inset 0 2px 0 rgba(255,255,255,0.6);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: #000;
+  border-radius: 6px;
+  line-height: 1;
+  user-select: none;
+	margin-bottom: 1em;
+}
+
+/* small label on left */
+.geo-label{
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0) 0 4px,
+      rgba(0,0,0,0.03) 4px 8px
+  );
+  padding: 4px 6px;
+  font-size: 11px;
+  color: #fff;
+  background-color: #bb2b2b;
+  border: 2px outset #ffb2b2;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+/**
+ *the digits area
+ */
+.geo-digits{
+  display: inline-block;
+  padding: 6px 10px;
+  background: linear-gradient(#000 0%, #333 100%);
+  color: #0f0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: 3px groove #999;
+  box-shadow: inset 0 0 12px rgba(0,255,0,0.12), 0 3px 0 rgba(0,0,0,0.6);
+  border-radius: 4px;
+  text-shadow: 
+     0 1px 0 rgba(0,0,0,0.8),
+     0 -1px 6px rgba(0,255,0,0.15);
+  font-variant-numeric: tabular-nums;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* optional tiny animated sparkle for extra 90s drama */
+.geo-digits::after{
+  content: " ✶";
+  font-size: 10px;
+  margin-left: 6px;
+  opacity: 0.8;
+  animation: sparkle 2s linear infinite;
+  color: #fff;
+  text-shadow: 0 0 6px #fff, 0 0 12px #9aff9a;
+}
+@keyframes sparkle {
+  0%,100% { transform: translateY(0); opacity: 0.8;}
+  50% { transform: translateY(-3px); opacity: 0.2;}
+}
+
+
 /**
  * Mobile
  */

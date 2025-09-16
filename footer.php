@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<?php echo do_shortcode('[geo_counter number="[Get_Counter_Hits]" digits="6"]'); ?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'netscape' ) ); ?>">
 				<?php
